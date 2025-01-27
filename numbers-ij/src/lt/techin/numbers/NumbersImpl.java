@@ -79,12 +79,11 @@ public class NumbersImpl implements Exercises {
 
     @Override
     public IntegerGenerator createIntegerGenerator(int i, int i1) {
-
-        return (x) -> x==i? i+1 : i;
+        return new IntegerGeneratorImpl(i, i1);
     }
 
     @Override
     public IntegerGenerator createFilteredIntegerGenerator(IntegerGenerator integerGenerator, NumberFilter numberFilter) {
-        return null;
+        return new FilteredIntegerGenerator(integerGenerator, numberFilter);
     }
 }
